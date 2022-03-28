@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body {
+      background: #dddddd;
+    }
+
+    #canvas {
+      margin: 10px;
+      padding: 10px;
+      background: #ffffff;
+      border: thin inset #aaaaaa;
+
+    }
+  </style>
+</head>
+
+<body>
+  <!--canvas的默认大小是300*150像素-->
+  <!--设置canvas的宽高的时候，不要通过CSS来设置width和height，因为CSS只能设置Canvas的元素本身大小，不能设置元素绘图表面（drawing surface）的大小-->
+  <canvas id="canvas" width="600" height="500">
+    Canvas不被支持
+  </canvas>
+</body>
+<script>
+  // 加下面的注释，才有canvas的代码提示，必须加在getElementById之前，紧靠着
+  /** @type {HTMLCanvasElement} */
+  var canvas = document.getElementById("canvas");
+  if (canvas.getContext) {
+    var ctx = canvas.getContext("2d");
+    // drawJuxing();
+    // drawSanjiao();
+    // drawYuan();
+    // drawXian();
+    drawWenzi();
+  }
+
+  // 矩形
+  function drawJuxing() {
+    ctx.fillRect(10, 10, 100, 50); // 坐标点10,10，绘制长100 宽50的矩形 默认黑色
+    ctx.strokeRect(10, 70, 100, 50); // 绘制矩形边框
+    ctx.clearRect(15, 15, 50, 25); // 清空指定区域，变透明
+  }
+
+  // 三角形
+  function drawSanjiao() {
+    ctx.beginPath();// 新建一条path
+    ctx.moveTo(10, 10);// 把画笔移动到指定位置
+    ctx.lineTo(50, 10);// 绘制一条到指定位置的直线
+    ctx.lineTo(50, 50);// 绘制一条到指定位置的直线
+    ctx.closePath();// 闭合路径。虽然我们只绘制了两条线段，但是closePath会closePath，仍然是一个3角形
+    ctx.stroke();// 描边。stroke不会自动closePath()
+    // ctx.fill(); //填充闭合区域。如果path没有闭合，则fill()会自动闭合路径。
+  }
+
+  // 圆弧
+  function drawYuan() {
+    ctx.beginPath();// 新建一条path
+    // 50 50为圆心 40位半径 0代表从这个弧度（0是x轴正方向）开始画Math.PI/2弧度结束 最后一个参数false默认代表顺时针 true代表逆时针
+    // 角度转换成弧度 radians=(Math.PI/180)*degrees 即 1度 = pai/180弧度 90度 = Math.PI / 2
+    ctx.arc(50, 50, 40, 0, Math.PI / 2, false);
+    ctx.stroke();// 描边。stroke不会自动closePath()
+    // ctx.fill(); //填充闭合区域。如果path没有闭合，则fill()会自动闭合路径。
+
+    ctx.beginPath();
+    ctx.arc(150, 50, 40, 0 , Math.PI / 2, false);
+    ctx.closePath();
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(50, 150, 40, -Math.PI / 2, Math.PI / 2, true);
+    ctx.fill();
+
+    // arcTo用法
+    ctx.beginPath();
+    ctx.moveTo(200, 200);
+    // 参数1 2：控制点1的坐标 参数3 4：控制点2的坐标
+    ctx.arcTo(300, 200, 300, 300, 100);
+    ctx.lineTo(300, 300);
+    ctx.stroke();
+  }
+
+  // 绘制线
+  function drawXian() {
+    ctx.beginPath();
+    ctx.moveTo(50, 50);
+    ctx.lineWidth = 30;
+    ctx.lineCap = "round"; // "butt", "round", "square"
+    ctx.strokeStyle = "red";
+    ctx.lineTo(100 ,50);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.lineWidth = 1;
+    ctx.setLineDash([20, 5]);
+    // ctx.lineDashOffset = -0;
+    ctx.strokeRect(100, 100, 100, 100);
+  }
+
+  // 绘制文字
+  function drawWenzi() {
+    ctx.font = "30px 微软雅黑";
+    // ctx.textAlign = "end";
+    // ctx.direction = "rtl";
+    ctx.fillText("学无止境", 50, 50, 300);
+    ctx.strokeText("学无止境", 50, 150);
+  }
+</script>
+
+</html>
