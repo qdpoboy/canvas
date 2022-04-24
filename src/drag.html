@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>拖拽框</title>
+</head>
+<style>
+  *{
+    padding: 0;
+    margin: 0;
+  }
+  .drag-box{
+    width: 300px;
+    height: 400px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+  }
+  .title{
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #cccccc;
+    text-align: center;
+    border-bottom: 1px dashed #000000;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  .title:hover{
+    cursor: pointer;
+  }
+  .content{
+    text-indent: 20px;
+    padding: 20px 10px 0 10px;
+  }
+</style>
+<body>
+  <div class="drag-box">
+    <div class="title">
+      点击我就可以拖拽了
+    </div>
+    <div class="content">
+      这里是内容了，这里是内容了，这里是内容了，这里是内容了
+      这里是内容了，这里是内容了，这里是内容了，这里是内容了
+    </div>
+  </div>
+</body>
+<script>
+  function onDrag(e) {
+    const dragBox = document.querySelector(".drag-box");
+      let oddStyle = window.getComputedStyle(dragBox);
+      let left = parseFloat(oddStyle.left);
+      let top = parseFloat(oddStyle.top);
+      dragBox.style.left = `${left + e.movementX}px`;
+      dragBox.style.top = `${top + e.movementY}px`;
+  }
+  const dragBoxTitle = document.querySelector(".title");
+  dragBoxTitle.addEventListener("mousedown", () => {
+    document.addEventListener("mousemove", onDrag);
+    document.addEventListener("mouseup", () => {
+      document.removeEventListener("mousemove", onDrag);
+    });
+  });
+</script>
+</html>
