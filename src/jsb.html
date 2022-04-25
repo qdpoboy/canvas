@@ -1,49 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>极速版抢券地址</title>
-  <style>
-    body {
-      background: #dddddd;
-    }
-
-    #canvas {
-      margin: 10px;
-      padding: 10px;
-      background: #ffffff;
-      border: thin inset #aaaaaa;
-
-    }
-  </style>
 </head>
+<style>
+  * {
+    padding: 0;
+    margin: 0%;
+  }
+
+  body {
+    background: #ffffff;
+  }
+
+  .jsb-box {
+    padding: 0 500px;
+  }
+
+  .jsb-box .block-one {
+    margin: 50px 0;
+  }
+
+  .block-one a {
+    color: #000000;
+    text-decoration: none;
+  }
+
+  .block-one .url {
+    height: 50px;
+    line-height: 50px;
+    background-color: #CCCCCC;
+    border-radius: 10px;
+  }
+
+  .block-one .url-now {
+    background-color: #CCFFCC;
+  }
+
+  .time {
+    font-weight: bolder;
+    padding: 0 5px;
+  }
+
+  .time-now {
+    color: #009966;
+  }
+</style>
 
 <body>
-  <h1>2022年4月</h1>
-  <p>
-    <a href="https://home.m.jd.com">保持登录状态</a>
-  </p>
-  <p>
-    <a href="https://api.m.jd.com/client.action?functionId=newBabelAwardCollection&client=wh5&body=%7B%22activityId%22%3A%223H885vA4sQj6ctYzzPVix4iiYN2P%22%2C%22scene%22%3A%221%22%2C%22args%22%3A%22key%3D64616D6FB9F745A939AEBE59B5331E98A02F7F3EBE7E2A8C6BC39900A5FB433C383A3885B1901C0036F186675FDB6B40_bingo%2CroleId%3D454CDE7D149EE1DA28FDC5C9AD4D3FF6_bingo%2CstrengthenKey%3D19F512DCD8EE34ABE9C4FB4A92C2F42AD9B1F4308CB2085C9DAE51ED67591679_bingo%22%7D">
-    5-2（7/9/12/15/18点）
-    </a>
-  </p>
-  <p>
-    <a href="https://api.m.jd.com/client.action?functionId=newBabelAwardCollection&client=wh5&body=%7B%22activityId%22%3A%22vN4YuYXS1mPse7yeVPRq4TNvCMR%22%2C%22scene%22%3A%221%22%2C%22args%22%3A%22key%3D440A3074D8054F656466EE989DEF40E4DE6342B45A4AB5D48889C7B31DD4E52ED6EB7F5C0174376325C72F3C5D85C6AA_bingo%2CroleId%3DB1781EF2C2537FB0E4A5B23AC99529A4_bingo%2CstrengthenKey%3D19F512DCD8EE34ABE9C4FB4A92C2F42AA1447D26BB4D8F8F1ADD929FC07559FC_bingo%22%7D">
-    10-4（8/11/14/16/20点）
-    </a>
-  </p>
-  <p>
-    <a href="https://api.m.jd.com/client.action?functionId=newBabelAwardCollection&client=wh5&body=%7B%22activityId%22%3A%223H885vA4sQj6ctYzzPVix4iiYN2P%22%2C%22scene%22%3A%221%22%2C%22args%22%3A%22key%3D79F6166D6F9BB11C9ED9696C6E30D9C1D392C277F9B79AB559E9868E1EE0910308189D1B2C9883FC5560EDA0CD002985_bingo%2CroleId%3DC6DCE94E14C0BEE454EA964509F4B26C_bingo%2CstrengthenKey%3D19F512DCD8EE34ABE9C4FB4A92C2F42A3E4F1D227F16BC3264497B20B54D33F5_bingo%22%7D">
-    15-8（9/12/15/17/20点）
-    </a>
-  </p>
-  <p>
-    <a href="https://api.m.jd.com/client.action?functionId=newBabelAwardCollection&client=wh5&body=%7B%22activityId%22%3A%22vN4YuYXS1mPse7yeVPRq4TNvCMR%22%2C%22scene%22%3A%221%22%2C%22args%22%3A%22key%3D13CE10DEFD75052795FFEBDA31379B65F2F22C26C5C5F0E3B8A128B978111DBB7A5BB54EBDB1373E0C35F5DEB9B67446_bingo%2CroleId%3DADAC87F1EC515A647C5357A175E3519B_bingo%2CstrengthenKey%3D19F512DCD8EE34ABE9C4FB4A92C2F42AAEFAF03A89700155D56A825B54D6675D_bingo%22%7D">
-    19-5券(7/10/15/18/21点)
-    </a>
-  </p>
+  <div class="jsb-box">
+    <h3>2022年4月</h3>
+    <p>
+      <a href="https://home.m.jd.com">保持登录状态</a>
+    </p>
+    <div class="block-one">
+      <a
+        href="https://api.m.jd.com/client.action?functionId=newBabelAwardCollection&client=wh5&body=%7B%22activityId%22%3A%223H885vA4sQj6ctYzzPVix4iiYN2P%22%2C%22scene%22%3A%221%22%2C%22args%22%3A%22key%3D64616D6FB9F745A939AEBE59B5331E98A02F7F3EBE7E2A8C6BC39900A5FB433C383A3885B1901C0036F186675FDB6B40_bingo%2CroleId%3D454CDE7D149EE1DA28FDC5C9AD4D3FF6_bingo%2CstrengthenKey%3D19F512DCD8EE34ABE9C4FB4A92C2F42AD9B1F4308CB2085C9DAE51ED67591679_bingo%22%7D">
+        <div class="url">
+          5-2（<span class="time time7">7</span>/<span class="time time9">9</span>/<span
+            class="time time12">12</span>/<span class="time time15">15</span>/<span class="time time18">18</span>点）
+          <span class="over"></span>
+        </div>
+      </a>
+    </div>
+    <div class="block-one">
+      <a
+        href="https://api.m.jd.com/client.action?functionId=newBabelAwardCollection&client=wh5&body=%7B%22activityId%22%3A%22vN4YuYXS1mPse7yeVPRq4TNvCMR%22%2C%22scene%22%3A%221%22%2C%22args%22%3A%22key%3D440A3074D8054F656466EE989DEF40E4DE6342B45A4AB5D48889C7B31DD4E52ED6EB7F5C0174376325C72F3C5D85C6AA_bingo%2CroleId%3DB1781EF2C2537FB0E4A5B23AC99529A4_bingo%2CstrengthenKey%3D19F512DCD8EE34ABE9C4FB4A92C2F42AA1447D26BB4D8F8F1ADD929FC07559FC_bingo%22%7D">
+        <div class="url">
+          10-4（<span class="time time8">8</span>/<span class="time time11">11</span>/<span
+            class="time time14">14</span>/<span class="time time16">16</span>/<span class="time time20">20</span>点）
+          <span class="over"></span>
+        </div>
+      </a>
+    </div>
+    <div class="block-one">
+      <a
+        href="https://api.m.jd.com/client.action?functionId=newBabelAwardCollection&client=wh5&body=%7B%22activityId%22%3A%223H885vA4sQj6ctYzzPVix4iiYN2P%22%2C%22scene%22%3A%221%22%2C%22args%22%3A%22key%3D79F6166D6F9BB11C9ED9696C6E30D9C1D392C277F9B79AB559E9868E1EE0910308189D1B2C9883FC5560EDA0CD002985_bingo%2CroleId%3DC6DCE94E14C0BEE454EA964509F4B26C_bingo%2CstrengthenKey%3D19F512DCD8EE34ABE9C4FB4A92C2F42A3E4F1D227F16BC3264497B20B54D33F5_bingo%22%7D">
+        <div class="url">
+          15-8（<span class="time time9">9</span>/<span class="time time12">12</span>/<span
+            class="time time15">15</span>/<span class="time time17">17</span>/<span class="time time20">20</span>点）
+          <span class="over"></span>
+        </div>
+      </a>
+    </div>
+    <div class="block-one">
+      <a
+        href="https://api.m.jd.com/client.action?functionId=newBabelAwardCollection&client=wh5&body=%7B%22activityId%22%3A%22vN4YuYXS1mPse7yeVPRq4TNvCMR%22%2C%22scene%22%3A%221%22%2C%22args%22%3A%22key%3D13CE10DEFD75052795FFEBDA31379B65F2F22C26C5C5F0E3B8A128B978111DBB7A5BB54EBDB1373E0C35F5DEB9B67446_bingo%2CroleId%3DADAC87F1EC515A647C5357A175E3519B_bingo%2CstrengthenKey%3D19F512DCD8EE34ABE9C4FB4A92C2F42AAEFAF03A89700155D56A825B54D6675D_bingo%22%7D">
+        <div class="url">
+          19-5（<span class="time time7">7</span>/<span class="time time10">10</span>/<span
+            class="time time15">15</span>/<span class="time time18">18</span>/<span class="time time21">21</span>点）
+          <span class="over"></span>
+        </div>
+      </a>
+    </div>
+  </div>
 </body>
+<script>
+  let cData = [
+    [7, 9, 12, 15, 18],
+    [8, 11, 14, 16, 20],
+    [9, 12, 15, 17, 20],
+    [7, 10, 15, 18, 21],
+  ];
+  const dateNow = new Date();
+  const hour = dateNow.getHours() + 1;
+  for (let d of cData) {
+    for (let t of d) {
+      if (t == hour) {
+        const nowTimes = document.querySelectorAll('.time' + t);
+        for (let nowTime of nowTimes) {
+          nowTime.className = 'time time-now time' + t;
+          nowTime.parentNode.className = 'url url-now';
+          nowTime.parentNode.lastElementChild.innerHTML = '下个整点开启';
+        }
+      }
+    }
+  }
+</script>
 
 </html>
