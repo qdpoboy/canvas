@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>导航</title>
+</head>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  ul,
+  li {
+    list-style: none;
+  }
+
+  .nav-box {
+    margin: 0 auto;
+    height: 50px;
+    line-height: 50px;
+    background-color: #cccccc;
+    /* border-radius: 10px; */
+    width: 70%;
+  }
+
+  .ul1>li {
+    display: inline-block;
+    position: relative;
+    margin: 0 10px;
+  }
+
+  .ul2 {
+    display: none;
+    position: absolute;
+    background-color: #cccccc;
+  }
+
+  .ul2 li{
+    padding: 0 5px;
+    min-width: 100px;
+  }
+</style>
+
+<body>
+  <div class="nav-box">
+    <ul class="ul1">
+      <li class="ul1-li li1">
+        一级菜单1
+        <ul class="ul2 li1-ul2">
+          <li class="ul2-li">二级菜单1-1</li>
+          <li class="ul2-li">二级菜单1-2</li>
+          <li class="ul2-li">二级菜单1-3</li>
+        </ul>
+      </li>
+      <li class="ul1-li li2">
+        一级菜单2
+        <ul class="ul2 li2-ul2">
+          <li class="ul2-li">二级菜单2-1</li>
+          <li class="ul2-li">二级菜单2-2</li>
+          <li class="ul2-li">二级菜单2-3</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</body>
+<script>
+  var ul1Li = document.getElementsByClassName("ul1-li");
+  for (let i in ul1Li) {
+    if (isNaN(i)) {
+      break;
+    }
+    let l = 'li' + (parseInt(i) + 1);
+    document.getElementsByClassName(l)[0].addEventListener("mouseover", (e) => {
+      document.getElementsByClassName(l)[0].querySelector("ul").style.display = "block";
+    });
+  }
+  document.getElementsByClassName("ul2")[0].addEventListener("mouseleave", (e) => {
+    document.getElementsByClassName("ul2")[0].style.display = "none";
+  });
+  document.getElementsByClassName("ul1-li")[0].addEventListener("mouseleave", (e) => {
+    document.getElementsByClassName("ul2")[0].style.display = "none";
+  });
+</script>
+
+</html>
