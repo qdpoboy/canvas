@@ -1,0 +1,12 @@
+@import "color";
+
+.cc {
+  width: 1100px;
+  color: $color-blue;
+}
+
+#a {
+  :defined {
+    color: #000;
+  }
+}
